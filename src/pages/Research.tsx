@@ -1,6 +1,7 @@
 import { ExternalLink, BookOpen, Newspaper, PenTool, GraduationCap, FlaskConical, FileText } from "lucide-react";
 import { Seo } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
+import { newsletterArchive } from "@/lib/writing-archive";
 import researchIllustration from "@/assets/research-illustration.svg";
 
 const writing = [
@@ -33,6 +34,11 @@ const mediumArticles = [
   "Projetar boas experiências conversacionais não é traduzir UI em texto",
   "Pessoas bibliotecárias podem trabalhar com UX?",
   "Arquitetura da Informação: considerações de um bibliotecário",
+  "Atributos da informação: pontos de vista em UX Writing",
+  "Voz e Tom no UX Writing: alguns aprendizados sobre conteúdo focado no usuário",
+  "Um primeiro contato: a otimização de informações para pacotes de viagem com UX Writing",
+  "Invasores na Nave? Seu estudo de caso completo sobre Landing Pages",
+  "[Roteiro] Saiba tudo sobre a Teoria das Inteligências Múltiplas",
 ];
 
 export default function Research() {
@@ -70,6 +76,12 @@ export default function Research() {
           <div className="flex justify-center md:justify-end">
             <img loading="lazy" decoding="async" src={researchIllustration} alt="Ilustração de pesquisa e escrita" className="w-full max-w-sm md:max-w-md" />
           </div>
+          <details className="mt-8 border-t border-border pt-5">
+            <summary className="cursor-pointer text-sm font-medium">Edições anteriores</summary>
+            <div className="divide-y divide-border mt-4">
+              {newsletterArchive.map(item => <a key={item.number} href="https://www.linkedin.com/newsletters/ux-potion-7233530230617866242" target="_blank" rel="noopener noreferrer" className="block py-3 text-sm hover:text-accent">#{item.number} · {item.title}</a>)}
+            </div>
+          </details>
         </div>
       </section>
 
