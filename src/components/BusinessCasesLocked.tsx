@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import caseOpty from "@/assets/case-opty.jpg";
 import caseStellantis from "@/assets/case-stellantis.jpg";
 import caseAfyaEducom from "@/assets/case-afya-educom.jpg";
+import caseGovernanca from "@/assets/case-checklist-governanca.jpg";
 
 const featuredCases = [
   {
@@ -37,7 +38,7 @@ const featuredCases = [
     title: "Processos auditáveis para sistemas conversacionais",
     description: "Padrões de qualidade, rastreabilidade e critérios formais para decisões em escala.",
     metric: "92 critérios | 23 críticos",
-    image: caseAfyaEducom
+    image: caseGovernanca
   }
 ];
 
