@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://yagohenrique.com.br/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://yagohenrique.com.br/work</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://yagohenrique.com.br/ux-craft-academy</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://yagohenrique.com.br/ux-craft-academy/masterclass-metricas-ai-agents</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yagohenrique.com.br/ux-craft-academy/workshop-rag-ux-conversacional</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yagohenrique.com.br/research</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yagohenrique.com.br/speaking</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yagohenrique.com.br/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yagohenrique.com.br/contact</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yagohenrique.com.br/work/banco-brasil</loc><priority>0.5</priority></url>
+  <url><loc>https://yagohenrique.com.br/work/drogaria-araujo</loc><priority>0.5</priority></url>
+  <url><loc>https://yagohenrique.com.br/work/caixa-residencial</loc><priority>0.5</priority></url>
+  <url><loc>https://yagohenrique.com.br/work/stellantis</loc><priority>0.5</priority></url>
+  <url><loc>https://yagohenrique.com.br/work/afya-educom</loc><priority>0.5</priority></url>
+  <url><loc>https://yagohenrique.com.br/work/opty</loc><priority>0.5</priority></url>
+  <url><loc>https://yagohenrique.com.br/work/atletico-mineiro</loc><priority>0.5</priority></url>
+  <url><loc>https://yagohenrique.com.br/work/intranet-digitalbot</loc><priority>0.5</priority></url>
+  <url><loc>https://yagohenrique.com.br/work/framework-entrega</loc><priority>0.5</priority></url>
+  <url><loc>https://yagohenrique.com.br/work/matriz-responsabilidades</loc><priority>0.5</priority></url>
+  <url><loc>https://yagohenrique.com.br/work/handoff-ux-dev</loc><priority>0.5</priority></url>
+  <url><loc>https://yagohenrique.com.br/work/guilda-resultados</loc><priority>0.5</priority></url>
+  <url><loc>https://yagohenrique.com.br/work/checklist-governanca</loc><priority>0.5</priority></url>
+</urlset>

@@ -1,0 +1,15 @@
+# Yago Henrique
+
+> Portfólio de Yago Henrique — Lead AI Experience Product Architect no Inter. Arquitetura de IA, agentes, avaliação, observabilidade e governança, com trabalho, pesquisa, escrita e ensino.
+
+## Pages
+
+- [Home](/): Posicionamento, indicadores e sistemas de IA.
+- [Trabalho](/work): Cases de produto, arquitetura, governança e experiências inteligentes.
+- [UX Craft Academy](/ux-craft-academy): Formações, masterclasses e workshops.
+- [Masterclass Métricas & AI Agents](/ux-craft-academy/masterclass-metricas-ai-agents): Avaliação de qualidade, confiabilidade e impacto em agentes de IA.
+- [Workshop RAG & UX Conversacional](/ux-craft-academy/workshop-rag-ux-conversacional): Aplicação de RAG em experiências conversacionais.
+- [Pesquisa e escrita](/research): Pesquisa doutoral, produção acadêmica, UX Potion e escrita técnica.
+- [Palestras e ensino](/speaking): Palestras, masterclasses, workshops e cursos.
+- [Sobre](/about): Trajetória, pesquisa e áreas de atuação.
+- [Contato](/contact): Canais de contato.
