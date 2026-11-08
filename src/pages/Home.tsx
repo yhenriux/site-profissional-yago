@@ -180,7 +180,7 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-5">
           {[
             { icon: Code2, kind: "Para engenharia e arquitetura", title: "Cases técnicos e código", desc: "Tecnologias utilizadas, decisões, diagramas, avaliação de LLMs, testes e repositórios auditáveis.", action: "Ver engenharia de IA", href: "/engineering" },
-            { icon: BriefcaseBusiness, kind: "Para recrutamento e negócios", title: "Projetos e resultados", desc: "Sistemas, operações, responsabilidades, decisões de produto e impacto organizacional.", action: "Ver trajetória aplicada", href: "/work" },
+            { icon: BriefcaseBusiness, kind: "Para recrutamento e negócios", title: "Atuação profissional", desc: "Competências por função, trajetória, responsabilidades e acesso aos projetos profissionais.", action: "Conhecer minha atuação", href: "/professional" },
             { icon: BookOpenText, kind: "Para pesquisa e academia", title: "Pesquisa e publicações", desc: "Artigos, investigação científica, métodos, ensino e produção intelectual.", action: "Ver produção acadêmica", href: "/research" },
           ].map(item => <Link key={item.href} to={item.href} className="group flex flex-col rounded-xl p-6 border border-border bg-card hover:shadow-lg transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
             <item.icon size={24} className="text-accent mb-5" />
