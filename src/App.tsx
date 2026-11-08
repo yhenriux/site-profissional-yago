@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 
 const Work = lazy(() => import("./pages/Work"));
 const Engineering = lazy(() => import("./pages/Engineering"));
+const Professional = lazy(() => import("./pages/Professional"));
 const CaseAiReliabilityLab = lazy(() => import("./pages/cases/CaseAiReliabilityLab"));
 const About = lazy(() => import("./pages/About"));
 const Research = lazy(() => import("./pages/Research"));
@@ -46,6 +47,7 @@ const App = () => (
               <Route path="/" element={<Home />} />
               <Route path="/work" element={<Work />} />
               <Route path="/engineering" element={<Engineering />} />
+              <Route path="/professional" element={<Professional />} />
               <Route path="/engineering/ai-reliability-lab" element={<CaseAiReliabilityLab />} />
               <Route path="/work/banco-brasil" element={<CaseBancoBrasil />} />
               <Route path="/work/drogaria-araujo" element={<CaseDrogariaAraujo />} />
