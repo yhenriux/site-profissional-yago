@@ -13,6 +13,7 @@ import {
 
 const navItems = [
   { label: "Cases técnicos", href: "/engineering" },
+  { label: "Atuação", href: "/professional" },
   { label: "Trabalho", href: "/work" },
   { label: "Pesquisa", href: "/research" },
 
