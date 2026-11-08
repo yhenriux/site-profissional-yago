@@ -1,0 +1,24 @@
+name: Verificar portfólio técnico
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build -- --base /site-profissional-yago/
+      - run: node scripts/prepare-pages.mjs
+      - name: Verify static deep link for case
+        run: test -f dist/engineering/ai-reliability-lab/index.html
