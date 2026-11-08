@@ -8,6 +8,8 @@ import { Layout } from "@/components/Layout";
 import Home from "./pages/Home";
 
 const Work = lazy(() => import("./pages/Work"));
+const Engineering = lazy(() => import("./pages/Engineering"));
+const CaseAiReliabilityLab = lazy(() => import("./pages/cases/CaseAiReliabilityLab"));
 const About = lazy(() => import("./pages/About"));
 const Research = lazy(() => import("./pages/Research"));
 const Speaking = lazy(() => import("./pages/Speaking"));
@@ -43,6 +45,8 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/work" element={<Work />} />
+              <Route path="/engineering" element={<Engineering />} />
+              <Route path="/engineering/ai-reliability-lab" element={<CaseAiReliabilityLab />} />
               <Route path="/work/banco-brasil" element={<CaseBancoBrasil />} />
               <Route path="/work/drogaria-araujo" element={<CaseDrogariaAraujo />} />
               <Route path="/work/caixa-residencial" element={<CaseCaixaResidencial />} />
