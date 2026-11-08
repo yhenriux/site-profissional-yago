@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Menu, PencilRuler } from "lucide-react";
+import { Menu, Network } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -12,10 +12,12 @@ import {
 } from "@/components/ui/sheet";
 
 const navItems = [
+  { label: "Cases técnicos", href: "/engineering" },
+  { label: "Atuação", href: "/professional" },
   { label: "Trabalho", href: "/work" },
-  { label: "Pesquisa e escrita", href: "/research" },
-  { label: "UX Craft Academy", href: "/ux-craft-academy" },
-  { label: "Palestras e ensino", href: "/speaking" },
+  { label: "Pesquisa", href: "/research" },
+
+  { label: "Ensino", href: "/speaking" },
   { label: "Sobre", href: "/about" },
   { label: "Contato", href: "/contact" },
 ];
@@ -37,7 +39,7 @@ export function Header() {
             className="inline-flex items-center gap-2 text-lg font-semibold text-foreground hover:text-accent transition-colors"
             onClick={() => setOpen(false)}
           >
-            <PencilRuler size={18} />
+            <Network size={18} />
             Yago Henrique
           </Link>
 
