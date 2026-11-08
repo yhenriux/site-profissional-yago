@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Seo } from "@/components/Seo";
-import { ArrowRight, Boxes, Gauge, Network, ShieldCheck } from "lucide-react";
+import { ArrowRight, Boxes, Code2, BookOpenText, BriefcaseBusiness, Gauge, Network, ShieldCheck, GitBranch, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BusinessCasesLocked } from "@/components/BusinessCasesLocked";
 import { useWorkAccess } from "@/hooks/use-work-access";
@@ -91,8 +91,8 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <Seo
-        title="Yago Henrique — Lead AI Experience Product Architect"
-        description="Portfólio de Yago Henrique, Lead AI Experience Product Architect no Inter. Arquitetura de IA, agentes, avaliação, observabilidade e governança."
+        title="Yago Henrique | Arquitetura e Engenharia de IA"
+        description="Portfólio de Yago Henrique. Cases técnicos públicos de AI Engineering, arquitetura de soluções, LLM Evaluation, projetos profissionais e pesquisa acadêmica."
         path="/"
       />
       {/* Hero Section */}
@@ -101,26 +101,26 @@ export default function Home() {
           <div className="space-y-6 md:space-y-8 order-2 md:order-1">
             <div className="space-y-5 animate-fade-in-up">
               <p className="text-accent font-medium text-sm">
-                Lead AI Experience Product Architect @ Inter
+                Staff AI Solutions Architect @ Inter
               </p>
               <h1 className="text-balance text-3xl md:text-5xl lg:text-5xl leading-[1.08] max-w-4xl">
-                Arquitetura de IA, agentes e experiências inteligentes
+                Arquitetura e engenharia de IA com evidências de execução
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                Atuo na interseção entre produto, experiência e engenharia, arquitetando sistemas baseados em LLMs, RAG e agentes com avaliação, observabilidade e governança para operar em escala.
+                Projeto e avalio sistemas baseados em LLMs, RAG e agentes. Conecto arquitetura, engenharia, avaliação, observabilidade e governança a problemas reais de produto e operação.
               </p>
             </div>
             
             <div className="flex flex-wrap gap-3 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
               <Button asChild size="lg" className="gap-2">
-                <Link to="/work">
-                  Conheça meu trabalho
+                <Link to="/engineering">
+                  Explorar cases técnicos
                   <ArrowRight size={18} />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/ux-craft-academy">
-                  Formações e eventos
+                <Link to="/work">
+                  Projetos profissionais
                 </Link>
               </Button>
             </div>
@@ -165,6 +165,45 @@ export default function Home() {
               <div className="absolute -top-2 -right-4 bg-primary text-primary-foreground px-3 py-1.5 rounded-full shadow-lg">
                 <span className="font-bold text-[10px] md:text-xs">PhD Researcher</span>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Audience-based routes: make professional and academic evidence equally findable. */}
+      <section className="section-container pt-8 pb-12" aria-labelledby="paths-heading">
+        <div className="mb-6">
+          <p className="text-sm text-accent font-medium mb-2">Escolha seu ponto de partida</p>
+          <h2 id="paths-heading" className="text-2xl md:text-3xl font-semibold">Trabalho aplicado e pesquisa em IA</h2>
+          <p className="text-sm text-muted-foreground max-w-3xl mt-3">Caminhos organizados para quem avalia engenharia, impacto profissional ou produção científica.</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-5">
+          {[
+            { icon: Code2, kind: "Para engenharia e arquitetura", title: "Cases técnicos e código", desc: "Tecnologias utilizadas, decisões, diagramas, avaliação de LLMs, testes e repositórios auditáveis.", action: "Ver engenharia de IA", href: "/engineering" },
+            { icon: BriefcaseBusiness, kind: "Para recrutamento e negócios", title: "Projetos e resultados", desc: "Sistemas, operações, responsabilidades, decisões de produto e impacto organizacional.", action: "Ver trajetória aplicada", href: "/work" },
+            { icon: BookOpenText, kind: "Para pesquisa e academia", title: "Pesquisa e publicações", desc: "Artigos, investigação científica, métodos, ensino e produção intelectual.", action: "Ver produção acadêmica", href: "/research" },
+          ].map(item => <Link key={item.href} to={item.href} className="group flex flex-col rounded-xl p-6 border border-border bg-card hover:shadow-lg transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+            <item.icon size={24} className="text-accent mb-5" />
+            <p className="text-xs font-medium text-muted-foreground mb-3">{item.kind}</p>
+            <h3 className="text-lg font-semibold">{item.title}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mt-3 flex-1">{item.desc}</p>
+            <span className="inline-flex items-center gap-2 text-sm text-accent font-semibold mt-6">{item.action}<ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" /></span>
+          </Link>)}
+        </div>
+      </section>
+
+      <section className="bg-secondary/50 border-y border-border" aria-labelledby="home-case-heading">
+        <div className="section-container py-10 md:py-14">
+          <div className="grid md:grid-cols-[minmax(0,1fr)_320px] gap-8 items-center">
+            <div className="space-y-4">
+              <p className="text-sm font-medium text-accent">Case técnico em destaque · AI Engineering</p>
+              <h2 id="home-case-heading" className="text-2xl md:text-3xl font-semibold">AI Reliability Lab</h2>
+              <p className="text-muted-foreground">Laboratório público de avaliação de LLMs em cenários bancários fictícios. Motor Python, Ollama, observabilidade, testes de segurança, comparação de regressões e relatórios reproduzíveis.</p>
+              <div className="flex flex-wrap gap-2 text-xs">{["Python","Ollama","Streamlit","pytest","GitHub Actions"].map(t=><span key={t} className="px-2.5 py-1.5 border border-border rounded-md bg-card text-muted-foreground">{t}</span>)}</div>
+              <Link to="/engineering/ai-reliability-lab" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline">Conhecer arquitetura, código e resultados <ArrowRight size={16}/></Link>
+            </div>
+            <div className="grid grid-cols-2 gap-3" aria-label="Indicadores do laboratório">
+              {[["100","casos sintéticos"],["16","políticas"],["6","módulos"],["37","testes aprovados"]].map(([v,l])=><div key={l} className="p-5 border border-border bg-card rounded-lg"><p className="text-3xl font-semibold">{v}</p><p className="text-xs text-muted-foreground mt-1">{l}</p></div>)}
             </div>
           </div>
         </div>
@@ -302,7 +341,7 @@ export default function Home() {
           <div className="max-w-4xl space-y-8">
             <h2 className="text-2xl md:text-3xl font-semibold">Sobre</h2>
             <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
-               Lead AI Experience Product Architect no Inter, pesquisador e professor. Conecto mais de nove anos em tecnologia e experiência digital à arquitetura de produtos e sistemas de IA, com foco em LLMs, RAG, agentes, avaliação, observabilidade e governança.
+               Staff AI Solutions Architect no Inter, pesquisador e professor. Conecto mais de nove anos em tecnologia e experiência digital à arquitetura de produtos e sistemas de IA, com foco em LLMs, RAG, agentes, avaliação, observabilidade e governança.
             </p>
             <div className="grid md:grid-cols-4 gap-6 pt-4">
               <div className="space-y-2">
