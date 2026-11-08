@@ -1,0 +1,62 @@
+name: Diagnosticar dominio oficial
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/diagnose-domain.yml
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: DNS and HTTP of production domain
+        shell: bash
+        run: |
+          set +e
+          echo "=== DNS authoritative resolution ==="
+          for host in yagohenrique.com.br www.yagohenrique.com.br yhenriux.github.io; do
+            echo "--- $host"
+            dig +noall +answer "$host" A
+            dig +noall +answer "$host" CNAME
+          done
+          echo "=== HTTP headers ==="
+          for url in https://yagohenrique.com.br/ https://yagohenrique.com.br/engineering/ai-reliability-lab https://yhenriux.github.io/site-profissional-yago/engineering/ai-reliability-lab/; do
+            echo "--- $url"
+            curl -sSIL --connect-timeout 12 --max-time 22 "$url" | grep -Ei 'HTTP/|location:|server:|x-powered-by:|x-vercel|x-lovable|x-github|x-served-by:|cache-control:|content-type:' | head -22
+          done
+      - name: Determine which frontend serves each domain
+        run: |
+          python - <<'PY'
+          import re, urllib.parse, urllib.request
+          endpoints = [
+              'https://yagohenrique.com.br/',
+              'https://yagohenrique.com.br/engineering/ai-reliability-lab',
+              'https://yhenriux.github.io/site-profissional-yago/engineering/ai-reliability-lab/',
+          ]
+          markers = ['AI Reliability Lab', 'Cases técnicos', 'Atuação profissional', 'Staff AI Solutions Architect']
+          for url in endpoints:
+              print(f'--- Checking {url}', flush=True)
+              try:
+                  req=urllib.request.Request(url, headers={'User-Agent':'Portfolio-Deploy-Checker/1.0'})
+                  with urllib.request.urlopen(req,timeout=25) as response:
+                      page=response.read(400_000).decode('utf-8','replace')
+                      print('HTML status',response.status,'final_url',response.url,'bytes',len(page))
+                      print('content markers in HTML:',{m:(m in page) for m in markers})
+                      scripts=re.findall(r'<script[^>]+src=["\']([^"\']+)["\']',page)
+                      print('script paths:',scripts[:4])
+                      for script in scripts[:3]:
+                          asset=urllib.parse.urljoin(response.url,script)
+                          try:
+                              r=urllib.request.Request(asset,headers={'User-Agent':'Portfolio-Deploy-Checker/1.0'})
+                              with urllib.request.urlopen(r,timeout=35) as asset_resp:
+                                  js=asset_resp.read(10_000_000).decode('utf-8','replace')
+                                  print('asset',asset,'status',asset_resp.status,'bytes',len(js),'markers',{m:(m in js) for m in markers})
+                          except Exception as exc:
+                              print('asset error:',str(exc)[:300])
+              except Exception as exc:
+                  print('page error:',str(exc)[:300])
+          PY
